@@ -1,0 +1,14 @@
+[user]
+	name = Ben John
+	email = github@benjohn.de
+[push]
+	default = simple
+[alias]
+	c = commit
+	ca = commit --amend
+	a = add -A
+	st = status
+	d = diff
+	dc = diff --cached
+	h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	v = version
