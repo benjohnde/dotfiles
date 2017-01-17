@@ -50,3 +50,5 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 alias coffee='sh ~/.coffee/coffee.sh' # handy shortcut for coffee-counter
 ssh-add -K ~/.ssh/id_rsa
+
+export PATH="$HOME/.yarn/bin:$PATH"
