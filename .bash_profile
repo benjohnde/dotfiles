@@ -45,3 +45,8 @@ function marks {
     printf "%-12s -> %s\n" $(basename ${filename}) $(head -n 1 ${filename})
   done
 }
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+alias coffee='sh ~/.coffee/coffee.sh' # handy shortcut for coffee-counter
+ssh-add -K ~/.ssh/id_rsa
