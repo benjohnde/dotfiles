@@ -15,10 +15,6 @@ function finder {
 EOF
 }
 
-function brew.info {
-  grep desc $(brew --prefix)/Library/Formula/*.rb | perl -ne 'm{^.*/(.*?)\.rb.*?\"(.*)"$} and print "$1|$2\n"' | column -t -s '|' | fzf --reverse
-}
-
 export MARKPATH=$HOME/.marks
 
 function jump {
@@ -49,6 +45,4 @@ function marks {
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 alias coffee='sh ~/.coffee/coffee.sh' # handy shortcut for coffee-counter
-ssh-add -K ~/.ssh/id_rsa
-
 export PATH="$HOME/.yarn/bin:$PATH"
