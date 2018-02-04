@@ -4,6 +4,7 @@
 [push]
 	default = simple
 [alias]
+	p = push
 	c = commit
 	ca = commit --amend
 	a = add -A
