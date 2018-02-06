@@ -1,11 +1,26 @@
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$PATH:$JAVA_HOME
 
+export ANDROID_HOME="/Users/bjohn/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME
+
 export ANDROID_SDK="/Users/bjohn/Library/Android/sdk/platform-tools"
 export PATH=$PATH:$ANDROID_SDK
 
-alias ll='ls -lah'
-alias wget='wget --no-check-certificate'
+export ANDROID_AAPT="/Users/bjohn/Library/Android/sdk/build-tools"
+export PATH=$PATH:$ANDROID_AAPT
+
+export ANDROID_TOOLS="/Users/bjohn/Library/Android/sdk/tools"
+export PATH=$PATH:$ANDROID_TOOLS
+
+alias ll='ls -lahF'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 function finder {
   osascript 2>/dev/null <<EOF
@@ -15,34 +30,6 @@ function finder {
 EOF
 }
 
-export MARKPATH=$HOME/.marks
+export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 
-function jump {
-  mark=$(head -n 1 "$MARKPATH/$1" 2>/dev/null)
-
-  if [[ $mark != '' ]]; then
-    cd $mark
-  else
-    echo "No such mark: $1"
-  fi
-}
-
-function mark {
-  mkdir -p "$MARKPATH"; echo "$(pwd)" > "$MARKPATH/$1"
-}
-
-function unmark {
-  rm -i "$MARKPATH/$1"
-}
-
-function marks {
-  find "$MARKPATH" -type f | while read filename
-  do
-    printf "%-12s -> %s\n" $(basename ${filename}) $(head -n 1 ${filename})
-  done
-}
-
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-alias coffee='sh ~/.coffee/coffee.sh' # handy shortcut for coffee-counter
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
