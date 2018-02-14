@@ -5,11 +5,18 @@
 	default = simple
 [alias]
 	p = push
+	pl = pull
 	c = commit
 	ca = commit --amend
 	a = add -A
 	st = status
 	d = diff
 	dc = diff --cached
-	h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	v = version
+        l = log --pretty=format:"%h%x09%ad%x09%an%x09%s"
+[log]
+	date = relative
+[core]
+	excludesfile = ~/.gitignore_global
+[commit]
+	template = ~/.gitmessage
