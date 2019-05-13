@@ -1,8 +1,6 @@
 [user]
 	name = Ben John
-	email = github@benjohn.de
-[push]
-	default = simple
+	email = john@liftric.com
 [alias]
 	p = push
 	pl = pull
@@ -13,9 +11,6 @@
 	d = diff
 	dc = diff --cached
 	v = version
-        l = log --pretty=format:"%h%x09%ad%x09%an%x09%s"
-[log]
-	date = relative
 [core]
 	excludesfile = ~/.gitignore_global
 [commit]
